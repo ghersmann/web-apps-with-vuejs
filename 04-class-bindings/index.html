@@ -23,16 +23,16 @@
         <div id="app" class="inside">
             <nav>
                 <button @click="activeLetter = 'A'" class="btn btn-a"
-                    :class="activeLetter === 'A' ? 'btn-active' : ''">A</button>
+                    :class="{'btn-active': activeLetter === 'A'}">A</button>
                 <button @click="activeLetter = 'B'" class="btn btn-b"
-                    :class="activeLetter === 'B' ? 'btn-active' : ''">B</button>
+                    :class="{'btn-active': activeLetter === 'B'}">B</button>
                 <button @click="activeLetter = 'C'" class="btn btn-c"
-                    :class="activeLetter === 'C' ? 'btn-active' : ''">C</button>
+                    :class="{'btn-active': activeLetter === 'C'}">C</button>
             </nav>
             <main>
-                <div class="letter letter-a" :class="activeLetter === 'A' ? 'letter-active' : ''">A</div>
-                <div class="letter letter-b" :class="activeLetter === 'B' ? 'letter-active' : ''">B</div>
-                <div class="letter letter-c" :class="activeLetter === 'C' ? 'letter-active' : ''">C</div>
+                <div class="letter letter-a" :class="{'letter-active': activeLetter === 'A'}">A</div>
+                <div class="letter letter-b" :class="{'letter-active': activeLetter === 'B'}">B</div>
+                <div class="letter letter-c" :class="{'letter-active': activeLetter === 'C'}">C</div>
             </main>
         </div>
     </main>
