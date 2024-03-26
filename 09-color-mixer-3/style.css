@@ -1,0 +1,151 @@
+/* Color Mixer 3.0 */
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+html {
+  font-family: "Courier New", Courier, monospace;
+}
+
+body {
+  margin: 0;
+}
+header {
+  background-color: rgb(27, 27, 27);
+  padding: 1rem 3rem;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+main {
+  background-color: dodgerblue;
+  height: 80vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+h1 {
+  margin: 0;
+  position: absolute;
+  margin-top: 20%;
+  margin-left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 20rem;
+}
+
+p {
+  font-size: 1.2rem;
+  color: white;
+  margin: 0;
+}
+
+.bg-wrapper {
+  display: flex;
+  height: 5rem;
+  margin-bottom: 2rem;
+}
+
+.bg-sliders {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 1rem;
+}
+
+.bg-btn-rgb {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 13rem;
+}
+
+.text-wrapper {
+  display: flex;
+  margin-left: auto;
+  height: 5rem;
+}
+
+.text-sliders {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 1rem;
+}
+
+.text-color {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 13rem;
+}
+
+.text-field {
+  position: absolute;
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
+
+.text-input {
+  margin-right: 1rem;
+}
+
+button {
+  font-family: inherit;
+  background-color: hotpink;
+  border-radius: 0.5rem;
+  border: 0.2rem solid transparent;
+}
+
+button:hover {
+  border: 0.2rem solid rgb(175, 2, 109);
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  width: 12rem;
+}
+
+input[type="range"]::-moz-range-track {
+  height: 0.5rem;
+  border: 0.1rem solid white;
+  border-radius: 0.5rem;
+}
+.red::-moz-range-track {
+  background-color: red;
+}
+
+.green::-moz-range-track {
+  background-color: green;
+}
+.blue::-moz-range-track {
+  background-color: blue;
+}
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 0.5rem;
+  border: 0.1rem solid white;
+  border-radius: 0.5rem;
+}
+.red::-webkit-slider-runnable-track {
+  background-color: red;
+}
+
+.green::-webkit-slider-runnable-track {
+  background-color: green;
+}
+.blue::-webkit-slider-runnable-track {
+  background-color: blue;
+}

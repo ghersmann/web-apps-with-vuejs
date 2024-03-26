@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Color Mixer 2.0</title>
+</head>
+
+<body id="app">
+    <header>
+        <div class="bg-wrapper">
+            <div class="bg-sliders">
+                <input class="red" type="range" step="1" min="0" max="255" v-model="bred">
+                <input class="green" type="range" step="1" min="0" max="255" v-model="bgreen">
+                <input class="blue" type="range" step="1" min="0" max="255" v-model="bblue">
+            </div>
+            <div class="bg-btn-rgb">
+                <p class="bg-rgb">Background Color <br>RGB {{ bred }}, {{ bgreen }}, {{ bblue }}</p>
+                <button name="btn" id="btn" @click="randomBGColor()">Random Background</button>
+            </div>
+        </div>
+        <div class="text-wrapper">
+            <div class="text-color">
+                <p class="text-rgb">Text Color <br>RGB {{ tred }}, {{ tgreen }}, {{ tblue }}</p>
+                <button name="btn" id="btn" @click="randomTextColor()">Random Text Color</button>
+            </div>
+            <div class="text-sliders">
+                <input class="red" type="range" step="1" min="0" max="255" v-model="tred">
+                <input class="green" type="range" step="1" min="0" max="255" v-model="tgreen">
+                <input class="blue" type="range" step="1" min="0" max="255" v-model="tblue">
+            </div>
+
+        </div>
+
+    </header>
+    <main :style="{ backgroundColor: computedColor }">
+        <div class="text-field">
+            <input class="text-input" type="text" name="text-field" id="text-field" v-model="testText">
+            <button @click="toggleText()">{{ textVisible ? hideText : showText }}</button>
+        </div>
+        <h1 v-if="textVisible" :style="{color: compTextColor}">{{testText}}</h1>
+    </main>
+    <script src="https://unpkg.com/vue@latest"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
