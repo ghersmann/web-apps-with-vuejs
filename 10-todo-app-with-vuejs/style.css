@@ -154,6 +154,10 @@ input[type="checkbox"] {
   width: 1rem;
 }
 
+.label-done {
+  text-decoration: line-through;
+}
+
 .delete-todo {
   margin-top: 0;
   margin-left: auto;

@@ -41,7 +41,8 @@
                 <li class="todo" v-for="(currentTodo, index) of filteredTodos" :key="currentTodo.id">
                     <input type="checkbox" :name="currentTodo.id" :id="'todo-' + currentTodo.id"
                         v-model="currentTodo.done" />
-                    <label :for="'todo-' + currentTodo.id">{{ currentTodo.description }}</label>
+                    <label :for="'todo-' + currentTodo.id" :class="{'label-done': currentTodo.done}">{{
+                        currentTodo.description }}</label>
                     <button class="delete-todo" v-if="currentTodo.done" @click="deleteSingleTodo(index)">Delete
                         Todo</button>
                 </li>
