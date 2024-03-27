@@ -1,0 +1,160 @@
+/* Todo App with Vue.JS */
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-gray: rgb(245, 245, 245);
+  --white: white;
+  --blue-btn: rgb(81, 135, 170);
+  --checkbox-green: rgb(127, 207, 167);
+  --yellow-focus: rgb(226, 176, 83);
+  --blue-deco: rgb(30, 50, 63);
+  --pink-bg: rgb(205, 94, 114);
+}
+
+html {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body {
+  background-color: var(--bg-gray);
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.pinkhead {
+  background-color: var(--pink-bg);
+  margin: 0 auto;
+  height: 15vh;
+  min-height: 4rem;
+  position: relative;
+}
+
+.headline {
+  color: var(--white);
+  text-shadow: 0.1rem 0.1rem var(--blue-btn), 0.2rem 0.2rem var(--yellow-focus);
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+main {
+  padding: 2rem;
+  margin: 0 auto;
+  width: 25rem;
+}
+
+ul {
+  list-style: none;
+  margin-left: -2.5rem;
+  display: inline-block;
+}
+
+.input-wrapper {
+  display: flex;
+}
+
+.text-field {
+  background-color: var(--white);
+  border-radius: 0.2rem;
+  border: 0.1rem solid var(--white);
+  margin-right: auto;
+  height: 1.5rem;
+}
+
+.text-field:hover,
+.text-field:focus {
+  outline: 0.1rem solid var(--yellow-focus);
+}
+
+button {
+  color: var(--white);
+  background-color: var(--blue-btn);
+  border-radius: 0.2rem;
+  border: 0.1rem solid var(--blue-btn);
+  box-shadow: 0.1rem 0.1rem var(--pink-bg);
+  height: 1.5rem;
+}
+
+button:hover,
+button:focus {
+  border: 0.1rem solid var(--yellow-focus);
+  outline: none;
+}
+
+.btn-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.filter-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.filters {
+  margin-bottom: 0.3rem;
+}
+
+input[type="radio"] {
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid var(--blue-deco);
+  border-radius: 50%;
+  appearance: none;
+  background-color: var(--white);
+  outline: none;
+  margin-right: 0.5rem;
+}
+
+input[type="radio"]:checked {
+  background-image: radial-gradient(
+    circle,
+    var(--blue-btn) 100%,
+    transparent 100%
+  );
+}
+
+input[type="radio"]:focus,
+input[type="radio"]:hover {
+  border: 2px solid var(--yellow-focus);
+}
+
+.todo {
+  display: flex;
+  background-color: var(--white);
+  border-radius: 0.2rem;
+  border: 2px solid var(--white);
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  width: 22rem;
+  height: 2.6rem;
+}
+
+.todo:hover,
+.todo:focus-within {
+  border: 2px solid var(--yellow-focus);
+  accent-color: var(--yellow-focus);
+  box-shadow: 0.1rem 0.1rem var(--pink-bg);
+}
+
+input[type="checkbox"] {
+  margin-right: 0.8rem;
+  accent-color: var(--checkbox-green);
+  height: 1rem;
+  width: 1rem;
+}
+
+.delete-todo {
+  margin-top: 0;
+  margin-left: auto;
+}

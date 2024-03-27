@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App with Vue.JS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="pinkhead">
+        <h1 class="headline">Todo App</h1>
+    </header>
+    <div id="app">
+        <main>
+            <form class="input-wrapper" id="input-form-wrapper" @submit.prevent="addTodo">
+                <input class="text-field" type="text" name="description" id="description" v-model="currentDescription"
+                    @input="checkText" />
+                <button :disabled="disableAddBtn" :class="{'btn-disabled': disableAddBtn}">Add Todo</button>
+            </form>
+            <form @submit.prevent="deleteSingleTodo">
+                <h2>Filter & Options</h2>
+                <ul class="filter-wrap">
+                    <li class="filters">
+                        <label for="all"><input type="radio" name="filter" id="all" v-model="filter"
+                                value="all" />All</label>
+                    </li>
+                    <li class="filters">
+                        <label for="open"><input type="radio" name="filter" id="open" v-model="filter"
+                                value="open" />Open</label>
+                    </li>
+                    <li class="filters">
+                        <label for="done"><input type="radio" name="filter" id="done" v-model="filter"
+                                value="done" />Done</label>
+                    </li>
+                </ul>
+            </form>
+            <h2>Your Todos</h2>
+            <ul>
+                <li class="todo" v-for="(currentTodo, index) of filteredTodos" :key="currentTodo.id">
+                    <input type="checkbox" :name="currentTodo.id" :id="'todo-' + currentTodo.id"
+                        v-model="currentTodo.done" />
+                    <label :for="'todo-' + currentTodo.id">{{ currentTodo.description }}</label>
+                    <button class="delete-todo" v-if="currentTodo.done" @click="deleteSingleTodo(index)">Delete
+                        Todo</button>
+                </li>
+            </ul>
+        </main>
+    </div>
+    <script src="https://unpkg.com/vue@latest"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
